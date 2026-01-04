@@ -1,0 +1,25 @@
+#howToUse {
+    > h2, h4 {
+        text-align: left;
+    }
+
+    > ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        ol {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            &:first-child {
+                margin-top: .5em;
+            }
+        }
+    }
+}
+
+section[class$='modal'] #howToUse > h2 {
+    display: none;
+}

@@ -1,0 +1,10 @@
+.detailsButton {
+    background: none;
+    border: none;
+    font-size: 1em;
+    color: var(--color--green-light);
+
+    &.hidden {
+        display: none;
+    }
+}

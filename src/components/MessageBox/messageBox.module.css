@@ -1,0 +1,13 @@
+.msgBox {
+    &.normal, &.info, &.success {
+        color: inherit;
+    }
+
+    &.warning {
+        color: var(--color--yellow-light);
+    }
+
+    &.error {
+        color: var(--color--red-light);
+    }
+}

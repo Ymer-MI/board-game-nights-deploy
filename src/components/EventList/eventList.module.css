@@ -1,0 +1,138 @@
+.dateList {
+    --gap--default: 1em;
+    --padding--default: calc(var(--gap--default) / 2);
+    --border-radius--default: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap--default);
+    
+    .date {
+        padding: calc(var(--padding--default) * 2);
+        border-radius: var(--border-radius--default);
+        background-color: var(--color--black-light);
+    
+        h3 {
+            color: var(--color--green-light);
+            text-align: left;
+            margin-bottom: 1em;
+        }
+    
+        .eventList {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap--default);
+    
+            .event {
+                display: flex;
+                flex-direction: column;
+                gap: var(--gap--default);
+                padding: var(--padding--default);
+                border-radius: var(--border-radius--default);
+                background-color: color-mix(in srgb, var(--color--purple-dark), transparent 50%);
+                color: var(--color--green-light);
+            
+                h4 {
+                    text-align: left;
+                    margin: 0;
+                }
+            
+                .infoRow {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--gap--default);
+
+                    @media (min-width: 768px) {
+                        grid-template-columns: repeat(auto-fill, 33.33%);
+                        gap: unset;
+                    }
+
+                    > div {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: var(--gap--default);
+
+                        &:nth-child(2) {
+                            justify-content: center;
+                        }
+                        
+                        .bannerDetail {
+                            padding: calc(var(--padding--default) / 2) var(--padding--default);
+                            border-radius: calc(var(--border-radius--default) / 2);
+                            background: linear-gradient(var(--color--green-dark), var(--color--green-light), var(--color--green-dark));
+                            color: var(--color--black-dark);
+                            font-weight: bold;
+                        }
+                    }
+                }
+                
+                .description {
+                    border-top: 2px solid var(--color--green-dark);
+                    padding-top: .5em;
+                    
+                    &.hidden {
+                        display: none;
+                    }
+
+                    .attendeeRow {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: var(--gap--default);
+                        
+                        > p {
+                            flex: 1;
+                            margin: 0;
+                        }
+                        
+                        > div {
+                            display: flex;
+                            flex-direction: column-reverse;
+                            gap: var(--gap--default);
+                            flex: 1;
+                            
+                            > div {
+                                display: flex;
+                                justify-content: center;
+                                flex: 1;
+                                
+                                &.attendContainer > button {
+                                    font-size: 1em;
+                                }
+                            }
+                        }
+
+                        @media (min-width: 768px) {
+                            flex-direction: row;
+                            align-items: end;
+
+                            > p {
+                                flex: 1;
+                            }
+
+                            > div {
+                                flex-direction: row;
+                                flex: 2;
+
+                                > div {
+                                    align-items: end;
+
+                                    > button {
+                                        width: 100%;
+                                        justify-content: center;
+                                    }
+
+                                    &.attendContainer {
+                                        justify-content: end;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

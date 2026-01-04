@@ -1,0 +1,3 @@
+export const getFormData = <T extends Record<string, any>>(formData: FormData) => Object.fromEntries(Array.from(formData.entries()).map(([key, value]) => !(value instanceof File) && ((value.startsWith('{') && value.endsWith('}')) || (value.startsWith('[') && value.endsWith(']'))) ? [key, JSON.parse(value)] : [key, value])) as T
+
+export const formatZodErrors = (zodErrors?: Record<string, { errors: string[] }>): Partial<Record<string, string[]>> | undefined => zodErrors && Object.fromEntries(Object.entries(zodErrors).filter(([, value]) => value?.errors?.length).map(([key, value]) => [key, value.errors]))
