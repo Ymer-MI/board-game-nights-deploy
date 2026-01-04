@@ -1,4 +1,4 @@
-import { BGGDB, BGGDBFields } from '@/models/BGGDB'
+import BGGDB, { BGGDBFields } from '@/models/BGGDB'
 
 export default function GamesList({ BGGDB, itemsToDisplay }: { BGGDB: BGGDB, itemsToDisplay?: number }) {
     return <section style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
